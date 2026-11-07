@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mil Graus Ar-Condicionado: revenda autorizada, instalação e manutenção de ar-condicionado.">
+    <meta name="description" content="Mil Graus Ar-Condicionado: venda, instalação e manutenção de aparelhos Hi-Wall, cassete, piso-teto e multi-split para casas, restaurantes, lojas e shoppings.">
     <title>Mil Graus Ar-Condicionado</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,58 +15,309 @@
     <!-- Topo com menu -->
     <header class="topo">
         <div class="container topo-conteudo">
-            <a href="#inicio" class="logo">Mil Graus<span>.</span></a>
+            <a href="#inicio" class="logo" aria-label="Mil Graus Ar-Condicionado"><span class="logo-nome">Mil Graus</span><span class="logo-complemento">Ar-Condicionado</span></a>
 
             <button class="menu-botao" id="menuBotao" aria-label="Abrir menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
 
             <nav class="menu" id="menu">
-                <a href="#calculadora">Calculadora</a>
-                <a href="#comparativo">Comparativo</a>
-                <a href="#como-funciona">Como funciona</a>
                 <a href="#servicos">Serviços</a>
                 <a href="#galeria">Trabalhos</a>
+                <a href="#sobre">Sobre nós</a>
+                <a href="#calculadora">Calculadora</a>
                 <a href="#duvidas">Dúvidas</a>
                 <a href="#contato" class="botao botao-pequeno">Contato</a>
             </nav>
         </div>
+
     </header>
 
     <main>
 
-        <!-- Apresentação -->
-        <section class="hero" id="inicio">
+        <!-- inicio -->
+        <section class="hero" id="inicio" aria-labelledby="tituloHero">
             <div class="container hero-conteudo">
                 <div class="hero-texto">
-                    <span class="etiqueta">Revendedora autorizada</span>
-                    <h1>Ar-condicionado com <em>tecnologia</em>, instalação e cuidado do início ao fim</h1>
-                    <p>Venda, instalação e manutenção de ar-condicionado para casa e empresa. Peça seu orçamento direto pelo WhatsApp.</p>
-                    <div class="hero-botoes">
-                        <a href="#" class="botao link-whatsapp">Pedir orçamento</a>
-                        <a href="#servicos" class="botao botao-contorno">Ver serviços</a>
+                    <span class="etiqueta etiqueta-azul">Mil Graus Ar-Condicionado</span>
+                    <h1 id="tituloHero"><span>Venda,</span> <span>instalação</span> <span>e <em>manutenção.</em></span></h1>
+                    <p class="hero-descricao">Split Hi-Wall, cassete, piso-teto e multi-split. Venda, instalação e manutenção para casas, restaurantes, lojas e espaços em shoppings.</p>
+                    <div class="hero-escolhas" id="heroSeletor" hidden>
+                        <p id="heroPergunta">Como podemos ajudar hoje?</p>
+                        <div class="hero-opcoes" role="group" aria-labelledby="heroPergunta">
+                            <button type="button" data-hero-servico="instalacao" aria-pressed="true" aria-controls="heroDetalhes">Instalação</button>
+                            <button type="button" data-hero-servico="manutencao" aria-pressed="false" aria-controls="heroDetalhes">Manutenção</button>
+                            <button type="button" data-hero-servico="aparelho" aria-pressed="false" aria-controls="heroDetalhes">Novo aparelho</button>
+                        </div>
                     </div>
+                    <div class="hero-botoes">
+                        <a href="#" class="botao hero-orcamento link-whatsapp">Pedir orçamento <span aria-hidden="true">↗</span></a>
+                        <a href="#galeria" class="hero-link">Ver trabalhos <span aria-hidden="true">→</span></a>
+                    </div>
+                    <p class="hero-nota">Para sua casa. Para seu negócio. Com cuidado de perto.</p>
                 </div>
 
-                <div class="hero-painel" aria-hidden="true">
-                    <div class="painel-titulo">Ambiente</div>
-                    <div class="painel-temperatura">22<span>°C</span></div>
-                    <div class="painel-barra"><div class="painel-barra-preenchida"></div></div>
-                    <div class="painel-linha"><span>Modo</span><strong>Frio</strong></div>
-                    <div class="painel-linha"><span>Economia</span><strong>Ativa</strong></div>
+                <div class="hero-visual">
+                    <figure class="hero-vitrine">
+                        <div class="hero-foto">
+                            <img id="heroFoto" src="img/trabalhos/split-sala-estar.webp" alt="Split instalado pela Mil Graus em sala de estar com portas de vidro" width="1000" height="563" fetchpriority="high" decoding="async">
+                            <span class="hero-registro">Um dos nossos trabalhos</span>
+                        </div>
+                        <figcaption id="heroDetalhes" aria-live="polite" aria-atomic="true">
+                            <span class="hero-servico-indice" id="heroIndice">01 / Instalação</span>
+                            <h2 id="heroServicoTitulo">Instalar com tranquilidade.</h2>
+                            <p id="heroServicoTexto">Do posicionamento ao acabamento, uma instalação pensada para o seu espaço.</p>
+                            <a id="heroServicoLink" href="#servico-instalacao">Conheça o serviço <span aria-hidden="true">↗</span></a>
+                        </figcaption>
+                    </figure>
+                    <span class="hero-assinatura" aria-hidden="true">Cuidado que faz a diferença.</span>
                 </div>
-            </div>
-
-            <div class="container indicadores">
-                <div><strong>Split</strong><span>e multi-split</span></div>
-                <div><strong>Vácuo</strong><span>na instalação</span></div>
-                <div><strong>Dreno</strong><span>testado</span></div>
-                <div><strong>Garantia</strong><span>do serviço</span></div>
             </div>
         </section>
 
+        <!-- servicos -->
+        <section class="secao" id="servicos">
+            <div class="container">
+                <span class="etiqueta etiqueta-azul">O que fazemos</span>
+                <h2 class="titulo-secao">O cuidado certo, <em>em cada etapa.</em></h2>
+                <p class="subtitulo-secao">Escolher, instalar e manter. Soluções para casas, apartamentos, restaurantes, lojas e espaços comerciais em shoppings.</p>
 
-        <!-- Calculadora de BTUs -->
+                <div class="grade">
+                    <article class="cartao" id="servico-venda">
+                        <div class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="10" rx="2"/><path d="M6 10h12M8 17v3m4-3v4m4-4v3M17 7h1"/></svg></div>
+                        <h3>Venda de aparelhos</h3>
+                        <p>Orientação para escolher o modelo e a capacidade do aparelho, de acordo com seu ambiente e sua rotina.</p>
+                    </article>
+                    <article class="cartao" id="servico-instalacao">
+                        <div class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6a5 5 0 0 0-6 6L3 17a2.8 2.8 0 0 0 4 4l5-5a5 5 0 0 0 6-6l-3 3-4-4 3-3Z"/></svg></div>
+                        <h3>Instalação</h3>
+                        <p>Instalação feita por equipe técnica, com acabamento limpo e testes antes de entregar.</p>
+                    </article>
+                    <article class="cartao" id="servico-manutencao">
+                        <div class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-7 8-7 12a7 7 0 0 0 14 0c0-4-7-12-7-12Z"/><path d="m9 15 2 2 4-4"/></svg></div>
+                        <h3>Manutenção</h3>
+                        <p>Limpeza, revisão e reparo para o aparelho durar mais e gastar menos energia.</p>
+                    </article>
+                    <article class="cartao" id="servico-revisao">
+                        <div class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18m-13 5 3 3 5-5"/></svg></div>
+                        <h3>Manutenção periódica</h3>
+                        <p>Lembretes das próximas revisões para você não esquecer de cuidar do aparelho.</p>
+                    </article>
+                </div>
+                <div class="equipamentos">
+                    <h3 id="tituloEquipamentos">Aparelhos e sistemas atendidos</h3>
+                    <dl class="equipamentos-lista">
+                        <div><dt>Split Hi-Wall</dt><dd>O modelo de parede, presente em casas e espaços comerciais.</dd></div>
+                        <div><dt>Cassete</dt><dd>Instalado no forro, com a unidade integrada ao teto.</dd></div>
+                        <div><dt>Piso-teto</dt><dd>Com opções de instalação junto ao piso ou suspensa no teto.</dd></div>
+                        <div><dt>Multi-split</dt><dd>Mais de uma unidade interna ligada a uma única unidade externa.</dd></div>
+                    </dl>
+                    <p class="equipamentos-consulta">Seu aparelho é de outro tipo? <a href="https://wa.me/5511978284358" class="link-whatsapp">Consulte a equipe pelo WhatsApp.</a></p>
+                </div>
+                <a href="#como-funciona" class="link-detalhe">Veja como funciona o atendimento <span aria-hidden="true">→</span></a>
+            </div>
+        </section>
+
+        <!-- galeria -->
+        <section class="secao secao-clara" id="galeria" aria-labelledby="tituloGaleria">
+            <div class="container">
+                <span class="etiqueta etiqueta-azul">Nosso trabalho, de perto</span>
+                <h2 class="titulo-secao" id="tituloGaleria">Trabalhos <em>realizados</em></h2>
+                <p class="subtitulo-secao">Conheça de perto algumas instalações e serviços realizados pela equipe Mil Graus Ar-Condicionado.</p>
+
+                <div class="galeria-carrossel" role="region" aria-roledescription="carrossel" aria-label="Trabalhos realizados">
+                    <div class="galeria" id="galeriaTrabalhos" tabindex="0" aria-label="Fotos dos trabalhos. Use as setas do teclado para navegar.">
+                        <figure class="galeria-cartao">
+                            <a class="galeria-link" href="img/trabalhos/split-lg-prata.webp" target="_blank" rel="noopener" aria-label="Ampliar foto: Split com acabamento integrado">
+                                <img src="img/trabalhos/split-lg-prata.webp" alt="Ar-condicionado LG prata instalado acima do painel e da cortina" width="1280" height="960" loading="lazy" decoding="async">
+                                <span class="galeria-ampliar" aria-hidden="true">Ampliar ↗</span>
+                            </a>
+                            <figcaption><span class="galeria-categoria">Instalação</span><span class="galeria-legenda">Split com acabamento integrado</span></figcaption>
+                        </figure>
+                        <figure class="galeria-cartao">
+                            <a class="galeria-link" href="img/trabalhos/split-sala-estar.webp" target="_blank" rel="noopener" aria-label="Ampliar foto: Conforto na sala de estar">
+                                <img src="img/trabalhos/split-sala-estar.webp" alt="Split instalado em sala de estar com iluminação embutida e portas de vidro" width="1000" height="563" loading="lazy" decoding="async">
+                                <span class="galeria-ampliar" aria-hidden="true">Ampliar ↗</span>
+                            </a>
+                            <figcaption><span class="galeria-categoria">Instalação</span><span class="galeria-legenda">Conforto na sala de estar</span></figcaption>
+                        </figure>
+                        <figure class="galeria-cartao">
+                            <a class="galeria-link" href="img/trabalhos/cassete-teto.webp" target="_blank" rel="noopener" aria-label="Ampliar foto: Cassete integrado ao teto">
+                                <img src="img/trabalhos/cassete-teto.webp" alt="Ar-condicionado tipo cassete instalado em teto branco junto à iluminação" width="1280" height="720" loading="lazy" decoding="async">
+                                <span class="galeria-ampliar" aria-hidden="true">Ampliar ↗</span>
+                            </a>
+                            <figcaption><span class="galeria-categoria">Instalação</span><span class="galeria-legenda">Cassete integrado ao teto</span></figcaption>
+                        </figure>
+                        <figure class="galeria-cartao">
+                            <a class="galeria-link" href="img/trabalhos/split-parede-decorada.webp" target="_blank" rel="noopener" aria-label="Ampliar foto: Split em parede decorada">
+                                <img src="img/trabalhos/split-parede-decorada.webp" alt="Ar-condicionado LG branco instalado sobre parede com revestimento estampado" width="1280" height="960" loading="lazy" decoding="async">
+                                <span class="galeria-ampliar" aria-hidden="true">Ampliar ↗</span>
+                            </a>
+                            <figcaption><span class="galeria-categoria">Instalação</span><span class="galeria-legenda">Split em parede decorada</span></figcaption>
+                        </figure>
+                        <figure class="galeria-cartao">
+                            <a class="galeria-link" href="img/trabalhos/split-preto.webp" target="_blank" rel="noopener" aria-label="Ampliar foto: Split preto em destaque">
+                                <img src="img/trabalhos/split-preto.webp" alt="Split preto instalado em parede branca" width="1280" height="960" loading="lazy" decoding="async">
+                                <span class="galeria-ampliar" aria-hidden="true">Ampliar ↗</span>
+                            </a>
+                            <figcaption><span class="galeria-categoria">Instalação</span><span class="galeria-legenda">Split preto em destaque</span></figcaption>
+                        </figure>
+                        <figure class="galeria-cartao">
+                            <a class="galeria-link" href="img/trabalhos/split-midea-cinza.webp" target="_blank" rel="noopener" aria-label="Ampliar foto: Split Midea cinza">
+                                <img src="img/trabalhos/split-midea-cinza.webp" alt="Ar-condicionado Midea cinza instalado próximo ao teto" width="1040" height="780" loading="lazy" decoding="async">
+                                <span class="galeria-ampliar" aria-hidden="true">Ampliar ↗</span>
+                            </a>
+                            <figcaption><span class="galeria-categoria">Instalação</span><span class="galeria-legenda">Split Midea cinza</span></figcaption>
+                        </figure>
+                        <figure class="galeria-cartao">
+                            <a class="galeria-link" href="img/trabalhos/split-porta-vidro.webp" target="_blank" rel="noopener" aria-label="Ampliar foto: Split acima da porta de vidro">
+                                <img src="img/trabalhos/split-porta-vidro.webp" alt="Split branco instalado em parede clara acima de porta de vidro" width="1280" height="720" loading="lazy" decoding="async">
+                                <span class="galeria-ampliar" aria-hidden="true">Ampliar ↗</span>
+                            </a>
+                            <figcaption><span class="galeria-categoria">Instalação</span><span class="galeria-legenda">Split acima da porta de vidro</span></figcaption>
+                        </figure>
+                        <figure class="galeria-cartao">
+                            <a class="galeria-link" href="img/trabalhos/cassete-ambiente-comercial.webp" target="_blank" rel="noopener" aria-label="Ampliar foto: Cassete em ambiente comercial">
+                                <img src="img/trabalhos/cassete-ambiente-comercial.webp" alt="Ar-condicionado cassete embutido no teto de um ambiente comercial" width="904" height="1280" loading="lazy" decoding="async">
+                                <span class="galeria-ampliar" aria-hidden="true">Ampliar ↗</span>
+                            </a>
+                            <figcaption><span class="galeria-categoria">Instalação</span><span class="galeria-legenda">Cassete em ambiente comercial</span></figcaption>
+                        </figure>
+                        <figure class="galeria-cartao">
+                            <a class="galeria-link" href="img/trabalhos/piso-teto.webp" target="_blank" rel="noopener" aria-label="Ampliar foto: Aparelho do tipo piso-teto">
+                                <img src="img/trabalhos/piso-teto.webp" alt="Ar-condicionado piso-teto instalado sob forro de madeira em ambiente azulejado" width="1280" height="720" loading="lazy" decoding="async">
+                                <span class="galeria-ampliar" aria-hidden="true">Ampliar ↗</span>
+                            </a>
+                            <figcaption><span class="galeria-categoria">Instalação</span><span class="galeria-legenda">Aparelho do tipo piso-teto</span></figcaption>
+                        </figure>
+                        <figure class="galeria-cartao">
+                            <a class="galeria-link" href="img/trabalhos/cassete-forro-escuro.webp" target="_blank" rel="noopener" aria-label="Ampliar foto: Cassete em forro escuro">
+                                <img src="img/trabalhos/cassete-forro-escuro.webp" alt="Ar-condicionado cassete preto integrado ao teto escuro com iluminação linear" width="1280" height="960" loading="lazy" decoding="async">
+                                <span class="galeria-ampliar" aria-hidden="true">Ampliar ↗</span>
+                            </a>
+                            <figcaption><span class="galeria-categoria">Instalação</span><span class="galeria-legenda">Cassete em forro escuro</span></figcaption>
+                        </figure>
+                        <figure class="galeria-cartao">
+                            <a class="galeria-link" href="img/trabalhos/condensadora-varanda.webp" target="_blank" rel="noopener" aria-label="Ampliar foto: Instalação na varanda">
+                                <img src="img/trabalhos/condensadora-varanda.webp" alt="Unidade externa posicionada junto à parede de uma varanda" width="780" height="1040" loading="lazy" decoding="async">
+                                <span class="galeria-ampliar" aria-hidden="true">Ampliar ↗</span>
+                            </a>
+                            <figcaption><span class="galeria-categoria">Unidades externas</span><span class="galeria-legenda">Instalação na varanda</span></figcaption>
+                        </figure>
+                        <figure class="galeria-cartao">
+                            <a class="galeria-link" href="img/trabalhos/condensadora-daikin.webp" target="_blank" rel="noopener" aria-label="Ampliar foto: Condensadora Daikin">
+                                <img src="img/trabalhos/condensadora-daikin.webp" alt="Condensadora Daikin de dois ventiladores instalada na área externa" width="960" height="1280" loading="lazy" decoding="async">
+                                <span class="galeria-ampliar" aria-hidden="true">Ampliar ↗</span>
+                            </a>
+                            <figcaption><span class="galeria-categoria">Unidades externas</span><span class="galeria-legenda">Condensadora Daikin</span></figcaption>
+                        </figure>
+                        <figure class="galeria-cartao">
+                            <a class="galeria-link" href="img/trabalhos/condensadoras-casa-campo.webp" target="_blank" rel="noopener" aria-label="Ampliar foto: Climatização em casa de campo">
+                                <img src="img/trabalhos/condensadoras-casa-campo.webp" alt="Quatro unidades externas instaladas lado a lado sobre telhado junto a um jardim" width="1280" height="960" loading="lazy" decoding="async">
+                                <span class="galeria-ampliar" aria-hidden="true">Ampliar ↗</span>
+                            </a>
+                            <figcaption><span class="galeria-categoria">Unidades externas</span><span class="galeria-legenda">Climatização em casa de campo</span></figcaption>
+                        </figure>
+                        <figure class="galeria-cartao">
+                            <a class="galeria-link" href="img/trabalhos/split-parede-amarela.webp" target="_blank" rel="noopener" aria-label="Ampliar foto: Split em parede colorida">
+                                <img src="img/trabalhos/split-parede-amarela.webp" alt="Split branco instalado próximo ao teto em parede amarela" width="1280" height="960" loading="lazy" decoding="async">
+                                <span class="galeria-ampliar" aria-hidden="true">Ampliar ↗</span>
+                            </a>
+                            <figcaption><span class="galeria-categoria">Instalação</span><span class="galeria-legenda">Split em parede colorida</span></figcaption>
+                        </figure>
+                        <figure class="galeria-cartao">
+                            <a class="galeria-link" href="img/trabalhos/climatizacao-embutida.webp" target="_blank" rel="noopener" aria-label="Ampliar foto: Climatização embutida">
+                                <img src="img/trabalhos/climatizacao-embutida.webp" alt="Saída de ar linear embutida em teto branco com iluminação de spots" width="750" height="1000" loading="lazy" decoding="async">
+                                <span class="galeria-ampliar" aria-hidden="true">Ampliar ↗</span>
+                            </a>
+                            <figcaption><span class="galeria-categoria">Instalação</span><span class="galeria-legenda">Climatização embutida</span></figcaption>
+                        </figure>
+                        <figure class="galeria-cartao">
+                            <a class="galeria-link" href="img/trabalhos/condensadoras-fachada.webp" target="_blank" rel="noopener" aria-label="Ampliar foto: Condensadoras na fachada">
+                                <img src="img/trabalhos/condensadoras-fachada.webp" alt="Condensadoras LG montadas em suportes na fachada de uma casa" width="1000" height="750" loading="lazy" decoding="async">
+                                <span class="galeria-ampliar" aria-hidden="true">Ampliar ↗</span>
+                            </a>
+                            <figcaption><span class="galeria-categoria">Unidades externas</span><span class="galeria-legenda">Condensadoras na fachada</span></figcaption>
+                        </figure>
+                        <figure class="galeria-cartao">
+                            <a class="galeria-link" href="img/trabalhos/manutencao-unidade-interna.webp" target="_blank" rel="noopener" aria-label="Ampliar foto: Cuidado com a unidade interna">
+                                <img src="img/trabalhos/manutencao-unidade-interna.webp" alt="Unidade interna de ar-condicionado aberta para manutenção acima de uma janela" width="1280" height="960" loading="lazy" decoding="async">
+                                <span class="galeria-ampliar" aria-hidden="true">Ampliar ↗</span>
+                            </a>
+                            <figcaption><span class="galeria-categoria">Manutenção</span><span class="galeria-legenda">Cuidado com a unidade interna</span></figcaption>
+                        </figure>
+                    </div>
+                    <div class="galeria-controles" id="galeriaControles" hidden>
+                        <p class="galeria-posicao" id="galeriaPosicao" role="status" aria-live="polite" aria-atomic="true"></p>
+                        <div class="galeria-setas">
+                            <button class="galeria-seta" id="trabalhosAnteriores" type="button" aria-label="Ver trabalhos anteriores" aria-controls="galeriaTrabalhos" disabled><span aria-hidden="true">&#8592;</span></button>
+                            <button class="galeria-seta" id="proximosTrabalhos" type="button" aria-label="Ver próximos trabalhos" aria-controls="galeriaTrabalhos"><span aria-hidden="true">&#8594;</span></button>
+                        </div>
+                    </div>
+                </div>
+                <p class="galeria-dica">Deslize para explorar os trabalhos. Selecione uma foto para ampliar.</p>
+            </div>
+        </section>
+
+        <!-- como-funciona -->
+        <section class="secao secao-escura" id="como-funciona">
+            <div class="container">
+                <span class="etiqueta">Sem complicação</span>
+                <h2 class="titulo-secao">Da primeira conversa <em>ao conforto.</em></h2>
+                <p class="subtitulo-secao">Do primeiro contato ao ar-condicionado funcionando.</p>
+
+                <ol class="passos">
+                    <li><span class="passo-numero">1</span><h3>Você chama</h3><p>Fale com a gente pelo WhatsApp e conte o que precisa.</p></li>
+                    <li><span class="passo-numero">2</span><h3>Visita e orçamento</h3><p>Combinamos uma visita para avaliar o local e passar o orçamento.</p></li>
+                    <li><span class="passo-numero">3</span><h3>Instalação</h3><p>A equipe instala e testa o aparelho no dia combinado.</p></li>
+                    <li><span class="passo-numero">4</span><h3>Acompanhamento</h3><p>Avisamos você quando chegar a hora da próxima manutenção.</p></li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- sobre -->
+        <section class="secao" id="sobre">
+            <div class="container duas-colunas">
+                <figure class="sobre-imagem">
+                    <img src="img/trabalhos/condensadoras-fachada.webp" alt="Condensadoras instaladas pela Mil Graus na fachada de uma residência" width="1000" height="750" loading="lazy" decoding="async">
+                    <figcaption>Nosso trabalho faz parte do conforto de cada espaço.</figcaption>
+                </figure>
+                <div>
+                    <span class="etiqueta etiqueta-azul">Sobre a Mil Graus Ar-Condicionado</span>
+                    <h2 class="titulo-secao">Uma história de <em>evolução e cuidado.</em></h2>
+                    <p>A Mil Graus Ar-Condicionado atua em refrigeração e climatização residencial, comercial e industrial, apoiada em cerca de 10 anos de experiência profissional na área.</p>
+                    <p>O aperfeiçoamento contínuo faz parte do trabalho da empresa, com foco em oferecer um serviço cada vez melhor e um atendimento próximo aos clientes.</p>
+                    <p>Seguir aprendendo, ampliar a atuação e alcançar novos mercados são objetivos que fazem parte dessa trajetória.</p>
+                    <ul class="sobre-diferenciais">
+                        <li>Experiência prática em refrigeração e climatização</li>
+                        <li>Busca constante por aperfeiçoamento</li>
+                        <li>Compromisso com o atendimento ao cliente</li>
+                    </ul>
+                    <p class="sobre-regiao" id="sobreRegiao">Conte para a equipe onde será o serviço e consulte a disponibilidade de atendimento.</p>
+                    <a href="#contato" class="link-detalhe">Converse com a Mil Graus <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- manutencao -->
+        <section class="secao" id="manutencao">
+            <div class="container duas-colunas">
+                <div>
+                    <span class="etiqueta etiqueta-azul">Cuidado que continua</span>
+                    <h2 class="titulo-secao">Manutenção em dia, <em>conforto por mais tempo.</em></h2>
+                    <p>A manutenção periódica evita falhas, melhora o ar que você respira e reduz a conta de luz. Aqui você acompanha o que é feito em cada revisão.</p>
+                    <a href="#" class="botao link-whatsapp">Agendar revisão</a>
+                </div>
+                <ul class="lista-check">
+                    <li>Limpeza de filtros e serpentinas</li>
+                    <li>Verificação do gás e da parte elétrica</li>
+                    <li>Checagem do dreno</li>
+                    <li>Relatório do que foi feito</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- calculadora -->
         <section class="secao secao-clara" id="calculadora">
             <div class="container">
                 <span class="etiqueta etiqueta-azul">Calculadora de BTUs</span>
@@ -104,7 +355,7 @@
                                 <span class="comparacao-valor comparacao-chute" id="valorChute">12.000</span>
                             </div>
                             <div class="comparacao-linha comparacao-destaque">
-                                <div><strong>Cálculo Mil Graus</strong><small>metragem + pessoas + sol da tarde</small></div>
+                                <div><strong>Cálculo Mil Graus Ar-Condicionado</strong><small>metragem + pessoas + sol da tarde</small></div>
                                 <span class="comparacao-valor" id="valorMilGraus">12.000</span>
                             </div>
                         </div>
@@ -128,7 +379,7 @@
             </div>
         </section>
 
-        <!-- Comparativo -->
+        <!-- comparativo -->
         <section class="secao" id="comparativo">
             <div class="container">
                 <h2 class="titulo-secao">Inverter ou convencional?</h2>
@@ -152,112 +403,11 @@
             </div>
         </section>
 
-        <!-- Serviços -->
-        <section class="secao" id="servicos">
-            <div class="container">
-                <h2 class="titulo-secao">Nossos serviços</h2>
-                <p class="subtitulo-secao">Tudo para o seu ar-condicionado funcionar bem.</p>
-
-                <div class="grade">
-                    <article class="cartao">
-                        <div class="icone">❄</div>
-                        <h3>Venda de aparelhos</h3>
-                        <p>Modelos split e multi-split das marcas que a Mil Graus revende, com ajuda para escolher a potência certa.</p>
-                    </article>
-                    <article class="cartao">
-                        <div class="icone">⚙</div>
-                        <h3>Instalação</h3>
-                        <p>Instalação feita por equipe técnica, com acabamento limpo e testes antes de entregar.</p>
-                    </article>
-                    <article class="cartao">
-                        <div class="icone">🔧</div>
-                        <h3>Manutenção</h3>
-                        <p>Limpeza, revisão e reparo para o aparelho durar mais e gastar menos energia.</p>
-                    </article>
-                    <article class="cartao">
-                        <div class="icone">⏰</div>
-                        <h3>Manutenção periódica</h3>
-                        <p>Lembretes das próximas revisões para você não esquecer de cuidar do aparelho.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Como funciona -->
-        <section class="secao secao-escura" id="como-funciona">
-            <div class="container">
-                <h2 class="titulo-secao">Como funciona</h2>
-                <p class="subtitulo-secao">Do primeiro contato ao ar-condicionado funcionando.</p>
-
-                <ol class="passos">
-                    <li><span class="passo-numero">1</span><h3>Você chama</h3><p>Fale com a gente pelo WhatsApp e conte o que precisa.</p></li>
-                    <li><span class="passo-numero">2</span><h3>Visita e orçamento</h3><p>Combinamos uma visita para avaliar o local e passar o orçamento.</p></li>
-                    <li><span class="passo-numero">3</span><h3>Instalação</h3><p>A equipe instala e testa o aparelho no dia combinado.</p></li>
-                    <li><span class="passo-numero">4</span><h3>Acompanhamento</h3><p>Avisamos você quando chegar a hora da próxima manutenção.</p></li>
-                </ol>
-            </div>
-        </section>
-
-        <!-- Manutenção -->
-        <section class="secao" id="manutencao">
-            <div class="container duas-colunas">
-                <div>
-                    <h2 class="titulo-secao">Manutenção em dia, aparelho por mais tempo</h2>
-                    <p>A manutenção periódica evita falhas, melhora o ar que você respira e reduz a conta de luz. Aqui você acompanha o que é feito em cada revisão.</p>
-                    <a href="#" class="botao link-whatsapp">Agendar revisão</a>
-                </div>
-                <ul class="lista-check">
-                    <li>Limpeza de filtros e serpentinas</li>
-                    <li>Verificação do gás e da parte elétrica</li>
-                    <li>Checagem do dreno</li>
-                    <li>Relatório do que foi feito</li>
-                </ul>
-            </div>
-        </section>
-
-
-        <!-- Galeria de trabalhos -->
-        <section class="secao" id="galeria">
-            <div class="container">
-                <h2 class="titulo-secao">Trabalhos realizados</h2>
-                <p class="subtitulo-secao">Instalações e manutenções feitas pela equipe Mil Graus.</p>
-
-                <div class="galeria">
-                    <figure><img src="img/trabalho-01.jpg" alt="Unidade externa instalada em uma varanda" loading="lazy"><figcaption>Condensadora em varanda</figcaption></figure>
-                    <figure><img src="img/trabalho-02.jpg" alt="Condensadora Daikin Super Inverter instalada em laje" loading="lazy"><figcaption>Condensadora Daikin Super Inverter</figcaption></figure>
-                    <figure><img src="img/trabalho-03.jpg" alt="Split instalado na parede da sala" loading="lazy"><figcaption>Split na sala de estar</figcaption></figure>
-                    <figure><img src="img/trabalho-04.jpg" alt="Split Midea preto instalado na parede" loading="lazy"><figcaption>Split Midea preto</figcaption></figure>
-                    <figure><img src="img/trabalho-05.jpg" alt="Três condensadoras LG instaladas no telhado" loading="lazy"><figcaption>Condensadoras LG no telhado</figcaption></figure>
-                    <figure><img src="img/trabalho-06.jpg" alt="Ar-condicionado de embutir no teto" loading="lazy"><figcaption>Modelo de embutir no teto</figcaption></figure>
-                    <figure><img src="img/trabalho-07.jpg" alt="Quatro condensadoras instaladas em estrutura sobre o telhado" loading="lazy"><figcaption>Várias condensadoras em casa de campo</figcaption></figure>
-                    <figure><img src="img/trabalho-08.jpg" alt="Condensadoras LG instaladas na parede externa" loading="lazy"><figcaption>Condensadoras na fachada</figcaption></figure>
-                    <figure><img src="img/trabalho-09.jpg" alt="Split Electrolux branco instalado na parede" loading="lazy"><figcaption>Split Electrolux</figcaption></figure>
-                    <figure><img src="img/trabalho-10.jpg" alt="Split LG instalado sobre painel de madeira" loading="lazy"><figcaption>Split LG no quarto</figcaption></figure>
-                    <figure><img src="img/trabalho-11.jpg" alt="Split Midea instalado acima da janela" loading="lazy"><figcaption>Split Midea no quarto</figcaption></figure>
-                    <figure><img src="img/trabalho-12.jpg" alt="Split LG instalado acima da porta de vidro" loading="lazy"><figcaption>Split LG na sala</figcaption></figure>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sobre -->
-        <section class="secao secao-clara" id="sobre">
-            <div class="container duas-colunas">
-                <div class="sobre-imagem" role="img" aria-label="Espaço reservado para a foto da equipe">
-                    <span>Foto da equipe Mil Graus</span>
-                </div>
-                <div>
-                    <h2 class="titulo-secao">Sobre a Mil Graus</h2>
-                    <!-- TODO (103.01): trocar pelo texto real passado pelo Pedro Paulo -->
-                    <p>A Mil Graus Ar-Condicionado é revendedora autorizada e atende clientes que buscam conforto com segurança e um atendimento próximo.</p>
-                    <p>Nosso foco é facilitar o seu contato, o agendamento de visitas e o cuidado com o aparelho depois da instalação.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Dúvidas -->
+        <!-- duvidas -->
         <section class="secao" id="duvidas">
             <div class="container container-estreito">
-                <h2 class="titulo-secao">Dúvidas frequentes</h2>
+                <span class="etiqueta etiqueta-azul">Pode perguntar</span>
+                <h2 class="titulo-secao">Suas dúvidas, <em>respondidas.</em></h2>
 
                 <details>
                     <summary>Como peço um orçamento?</summary>
@@ -265,7 +415,7 @@
                 </details>
                 <details>
                     <summary>Vocês fazem a instalação?</summary>
-                    <p>Sim. A instalação é feita pela equipe técnica da Mil Graus.</p>
+                    <p>Sim. A instalação é feita pela equipe técnica da Mil Graus Ar-Condicionado.</p>
                 </details>
                 <details>
                     <summary>Com que frequência devo fazer a manutenção?</summary>
@@ -286,11 +436,11 @@
             </div>
         </section>
 
-        <!-- Contato -->
+        <!-- contato -->
         <section class="secao contato" id="contato">
             <div class="container contato-conteudo">
                 <h2>Vamos conversar?</h2>
-                <p>Deixe seu nome e WhatsApp. A conversa abre já com seus dados para a equipe Mil Graus.</p>
+                <p>Deixe seu nome e WhatsApp. A conversa abre já com seus dados para a equipe Mil Graus Ar-Condicionado.</p>
 
                 <form id="formContato" class="form-contato">
                     <label for="contatoNome" class="visualmente-oculto">Seu nome</label>
@@ -309,12 +459,12 @@
     <footer class="rodape">
         <div class="container rodape-conteudo">
             <div>
-                <a href="#inicio" class="logo">Mil Graus<span>.</span></a>
+                <a href="#inicio" class="logo" aria-label="Mil Graus Ar-Condicionado"><span class="logo-nome">Mil Graus</span><span class="logo-complemento">Ar-Condicionado</span></a>
                 <p>Ar-condicionado: venda, instalação e manutenção.</p>
             </div>
             <div>
                 <!-- TODO (103.01): trocar pelos dados reais -->
-                <p>Telefone: (00) 00000-0000</p>
+                <p>WhatsApp: <a href="https://wa.me/5511978284358" class="link-whatsapp">(11) 97828-4358</a></p>
                 <p>Atendimento: seg. a sex., 8h às 18h</p>
             </div>
         </div>
@@ -323,7 +473,28 @@
     </footer>
 
     <!-- Botão fixo do WhatsApp -->
-    <a href="#" class="whatsapp-fixo link-whatsapp" aria-label="Falar no WhatsApp">WhatsApp</a>
+    <a href="https://wa.me/5511978284358" class="whatsapp-fixo link-whatsapp" aria-label="Falar no WhatsApp" title="Falar no WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M21 11.5a9 9 0 0 1-13.33 7.9L3 21l1.6-4.7A9 9 0 1 1 21 11.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M8 7.5c.2-.4.4-.4.7-.4h.5c.2 0 .3 0 .4.3l.9 2c.1.2.1.4-.1.6l-.7.8c-.2.2-.2.3-.1.5a7 7 0 0 0 3.2 2.8c.2.1.4.1.5-.1l.9-1c.2-.2.3-.2.6-.1l1.9.9c.3.1.4.2.4.4 0 .4-.2 1.3-.6 1.7-.4.4-1 .6-1.6.6-.5 0-1.4-.2-2.6-.8-1.5-.7-3.2-2.2-4.3-3.9C7 10 7.1 8.6 8 7.5Z" fill="currentColor"/>
+        </svg>
+    </a>
+
+    <dialog class="galeria-visualizador" id="galeriaVisualizador" aria-labelledby="fotoLegenda" aria-describedby="fotoContador">
+        <div class="visualizador-conteudo">
+            <div class="visualizador-topo">
+                <p id="fotoContador" aria-live="polite"></p>
+                <button class="visualizador-botao" id="fecharFoto" type="button" aria-label="Fechar foto" autofocus>×</button>
+            </div>
+            <img id="fotoAmpliada" alt="">
+            <div class="visualizador-rodape">
+                <button class="visualizador-botao" id="fotoAnterior" type="button" aria-label="Foto anterior">←</button>
+                <p id="fotoLegenda" aria-live="polite"></p>
+                <button class="visualizador-botao" id="fotoProxima" type="button" aria-label="Próxima foto">→</button>
+            </div>
+        </div>
+    </dialog>
+
 
     <script src="js/script.js"></script>
 </body>
