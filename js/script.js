@@ -9,10 +9,28 @@ var linksWhatsapp = document.querySelectorAll(".link-whatsapp");
 var enderecoWhatsapp = "https://wa.me/" + numeroWhatsapp + "?text=" + encodeURIComponent(mensagemWhatsapp);
 
 linksWhatsapp.forEach(function (link) {
-    link.href = enderecoWhatsapp;
+    var mensagem = link.dataset.whatsappMensagem;
+    link.href = mensagem ? "https://wa.me/" + numeroWhatsapp + "?text=" + encodeURIComponent(mensagem) : enderecoWhatsapp;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
 });
+
+// ===== Navbar transparente enquanto estiver sobre o hero =====
+(function () {
+    var topo = document.querySelector(".topo");
+    var hero = document.getElementById("inicio");
+    if (!topo || !hero) return;
+
+    function atualizarTopo() {
+        var sobreHero = hero.getBoundingClientRect().bottom > topo.offsetHeight;
+        topo.classList.toggle("topo-sobre-hero", sobreHero);
+    }
+
+    atualizarTopo();
+    window.addEventListener("scroll", atualizarTopo, { passive: true });
+    window.addEventListener("resize", atualizarTopo);
+    window.addEventListener("pageshow", atualizarTopo);
+})();
 
 // ===== Menu do celular =====
 var menuBotao = document.getElementById("menuBotao");
@@ -30,57 +48,6 @@ menu.querySelectorAll("a").forEach(function (item) {
         menuBotao.setAttribute("aria-expanded", false);
     });
 });
-
-// ===== Hero: escolha do serviço =====
-(function () {
-    var seletor = document.getElementById("heroSeletor");
-    if (!seletor) return;
-
-    var opcoes = Array.from(seletor.querySelectorAll("[data-hero-servico]"));
-    var foto = document.getElementById("heroFoto");
-    var animacao;
-    var servicos = {
-        instalacao: {
-            indice: "01 / Instalação", titulo: "Instalar com tranquilidade.",
-            texto: "Do posicionamento ao acabamento, uma instalação pensada para o seu espaço.",
-            imagem: "img/trabalhos/split-sala-estar.webp", largura: 1000, altura: 563,
-            alt: "Split instalado pela Mil Graus em sala de estar com portas de vidro", destino: "#servico-instalacao"
-        },
-        manutencao: {
-            indice: "02 / Manutenção", titulo: "Cuidar para continuar bem.",
-            texto: "Limpeza, revisão e reparos para manter o aparelho pronto para o dia a dia.",
-            imagem: "img/trabalhos/manutencao-unidade-interna.webp", largura: 1280, altura: 960,
-            alt: "Unidade interna aberta durante um serviço de manutenção da Mil Graus", destino: "#servico-manutencao"
-        },
-        aparelho: {
-            indice: "03 / Novo aparelho", titulo: "Escolher com orientação.",
-            texto: "Encontre o modelo e a capacidade que combinam com seu ambiente e sua rotina.",
-            imagem: "img/trabalhos/split-midea-cinza.webp", largura: 1040, altura: 780,
-            alt: "Ar-condicionado Midea cinza instalado em um dos trabalhos da Mil Graus", destino: "#servico-venda"
-        }
-    };
-
-    opcoes.forEach(function (botao) {
-        botao.addEventListener("click", function () {
-            if (botao.getAttribute("aria-pressed") === "true") return;
-            var servico = servicos[botao.dataset.heroServico];
-            opcoes.forEach(function (opcao) { opcao.setAttribute("aria-pressed", opcao === botao ? "true" : "false"); });
-            foto.src = servico.imagem;
-            foto.alt = servico.alt;
-            foto.width = servico.largura;
-            foto.height = servico.altura;
-            document.getElementById("heroIndice").textContent = servico.indice;
-            document.getElementById("heroServicoTitulo").textContent = servico.titulo;
-            document.getElementById("heroServicoTexto").textContent = servico.texto;
-            document.getElementById("heroServicoLink").href = servico.destino;
-            if (animacao) animacao.cancel();
-            if (typeof foto.animate === "function" && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-                animacao = foto.animate([{ opacity: .5 }, { opacity: 1 }], { duration: 250, easing: "ease-out" });
-            }
-        });
-    });
-    seletor.hidden = false;
-})();
 
 // ===== Calculadora de BTUs =====
 // Regra simples:
@@ -174,9 +141,12 @@ document.getElementById("formContato").addEventListener("submit", function (even
     evento.preventDefault();
 
     var nome = document.getElementById("contatoNome").value.trim();
-    var telefone = document.getElementById("contatoZap").value.trim();
+    var local = document.getElementById("contatoLocal").value.trim();
+    var servico = document.getElementById("contatoServico").value;
+    if (!nome || !local || !servico) return;
 
-    var texto = "Olá! Meu nome é " + nome + " e meu WhatsApp é " + telefone + ". Gostaria de falar com a equipe da Mil Graus Ar-Condicionado.";
+    var texto = "Olá! Vim pelo site e gostaria de um orçamento.\n\n" +
+        "Nome: " + nome + "\nCidade/bairro: " + local + "\nServiço: " + servico;
     window.open("https://wa.me/" + numeroWhatsapp + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
 });
 

@@ -3,8 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mil Graus Ar-Condicionado: venda, instalação e manutenção de aparelhos Hi-Wall, cassete, piso-teto e multi-split para casas, restaurantes, lojas e shoppings.">
+    <meta name="description" content="Mil Graus Ar-Condicionado: venda, instalação e manutenção em São Paulo, Grande São Paulo e interior paulista. Soluções para casas, restaurantes, lojas e shoppings.">
     <title>Mil Graus Ar-Condicionado</title>
+    <meta name="theme-color" content="#07183a">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Mil Graus Ar-Condicionado">
+    <meta property="og:title" content="Mil Graus Ar-Condicionado | Seu conforto começa aqui">
+    <meta property="og:description" content="Venda, instalação e manutenção de ar-condicionado em São Paulo, Grande São Paulo e interior paulista. Peça seu orçamento pelo WhatsApp.">
+    <!-- Ao publicar: use a URL HTTPS completa do arquivo em og:image e twitter:image;
+         adicione também og:url e link rel="canonical" com o endereço público do site. -->
+    <meta property="og:image" content="img/compartilhamento.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Mil Graus Ar-Condicionado. Venda, instalação e manutenção em São Paulo, Grande São Paulo e interior paulista.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mil Graus Ar-Condicionado | Seu conforto começa aqui">
+    <meta name="twitter:description" content="Venda, instalação e manutenção em São Paulo, Grande São Paulo e interior paulista. Peça seu orçamento pelo WhatsApp.">
+    <meta name="twitter:image" content="img/compartilhamento.png">
+    <meta name="twitter:image:alt" content="Mil Graus Ar-Condicionado. Seu conforto começa com o cuidado certo.">
+    <link rel="icon" href="img/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="180x180">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,11 +34,11 @@
 <body>
 
     <!-- Topo com menu -->
-    <header class="topo">
+    <header class="topo topo-sobre-hero">
         <div class="container topo-conteudo">
             <a href="#inicio" class="logo" aria-label="Mil Graus Ar-Condicionado"><span class="logo-nome">Mil Graus</span><span class="logo-complemento">Ar-Condicionado</span></a>
 
-            <button class="menu-botao" id="menuBotao" aria-label="Abrir menu" aria-expanded="false">
+            <button class="menu-botao" id="menuBotao" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
                 <span></span><span></span><span></span>
             </button>
 
@@ -25,6 +46,7 @@
                 <a href="#servicos">Serviços</a>
                 <a href="#galeria">Trabalhos</a>
                 <a href="#sobre">Sobre nós</a>
+                <a href="#regioes">Onde atendemos</a>
                 <a href="#calculadora">Calculadora</a>
                 <a href="#duvidas">Dúvidas</a>
                 <a href="#contato" class="botao botao-pequeno">Contato</a>
@@ -37,41 +59,67 @@
 
         <!-- inicio -->
         <section class="hero" id="inicio" aria-labelledby="tituloHero">
+            <img class="hero-foto" src="imagens/hero-manutencao.webp" srcset="imagens/hero-manutencao-768.webp 768w, imagens/hero-manutencao.webp 1537w" sizes="100vw" alt="Técnico realizando a manutenção de um ar-condicionado split em uma sala de estar" width="1537" height="1023" fetchpriority="high" decoding="async">
             <div class="container hero-conteudo">
                 <div class="hero-texto">
                     <span class="etiqueta etiqueta-azul">Mil Graus Ar-Condicionado</span>
-                    <h1 id="tituloHero"><span>Venda,</span> <span>instalação</span> <span>e <em>manutenção.</em></span></h1>
-                    <p class="hero-descricao">Split Hi-Wall, cassete, piso-teto e multi-split. Venda, instalação e manutenção para casas, restaurantes, lojas e espaços em shoppings.</p>
-                    <div class="hero-escolhas" id="heroSeletor" hidden>
-                        <p id="heroPergunta">Como podemos ajudar hoje?</p>
-                        <div class="hero-opcoes" role="group" aria-labelledby="heroPergunta">
-                            <button type="button" data-hero-servico="instalacao" aria-pressed="true" aria-controls="heroDetalhes">Instalação</button>
-                            <button type="button" data-hero-servico="manutencao" aria-pressed="false" aria-controls="heroDetalhes">Manutenção</button>
-                            <button type="button" data-hero-servico="aparelho" aria-pressed="false" aria-controls="heroDetalhes">Novo aparelho</button>
-                        </div>
-                    </div>
+                    <h1 id="tituloHero">Seu conforto começa com um ar-condicionado <em>bem cuidado.</em></h1>
+                    <p class="hero-descricao">Instalação, limpeza e manutenção de ar-condicionado para sua casa ou empresa. Conte com atendimento especializado para manter seu ambiente sempre agradável.</p>
                     <div class="hero-botoes">
-                        <a href="#" class="botao hero-orcamento link-whatsapp">Pedir orçamento <span aria-hidden="true">↗</span></a>
-                        <a href="#galeria" class="hero-link">Ver trabalhos <span aria-hidden="true">→</span></a>
+                        <a href="https://wa.me/5511978284358" class="botao hero-orcamento link-whatsapp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a9 9 0 0 1-13.3 7.9L3 21l1.6-4.7A9 9 0 1 1 21 11.5Z"/><path d="M8 8c0 4 4 8 8 8l1-2-3-1-1 1-3-3 1-1-1-3-2 1Z"/></svg>Solicitar orçamento</a>
+                        <a href="#servicos" class="hero-link">Nossos serviços <span aria-hidden="true">↗</span></a>
                     </div>
-                    <p class="hero-nota">Para sua casa. Para seu negócio. Com cuidado de perto.</p>
+                    <ul class="hero-servicos" aria-label="Serviços em destaque">
+                        <li><span aria-hidden="true">✓</span>Instalação</li>
+                        <li><span aria-hidden="true">✓</span>Higienização</li>
+                        <li><span aria-hidden="true">✓</span>Manutenção</li>
+                    </ul>
+                    <a href="#regioes" class="hero-cobertura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>São Paulo, Grande São Paulo e interior</span><span aria-hidden="true">↗</span></a>
                 </div>
 
-                <div class="hero-visual">
-                    <figure class="hero-vitrine">
-                        <div class="hero-foto">
-                            <img id="heroFoto" src="img/trabalhos/split-sala-estar.webp" alt="Split instalado pela Mil Graus em sala de estar com portas de vidro" width="1000" height="563" fetchpriority="high" decoding="async">
-                            <span class="hero-registro">Um dos nossos trabalhos</span>
-                        </div>
-                        <figcaption id="heroDetalhes" aria-live="polite" aria-atomic="true">
-                            <span class="hero-servico-indice" id="heroIndice">01 / Instalação</span>
-                            <h2 id="heroServicoTitulo">Instalar com tranquilidade.</h2>
-                            <p id="heroServicoTexto">Do posicionamento ao acabamento, uma instalação pensada para o seu espaço.</p>
-                            <a id="heroServicoLink" href="#servico-instalacao">Conheça o serviço <span aria-hidden="true">↗</span></a>
-                        </figcaption>
-                    </figure>
-                    <span class="hero-assinatura" aria-hidden="true">Cuidado que faz a diferença.</span>
+            </div>
+        </section>
+
+        <!-- Regiões de atendimento -->
+        <section class="secao cobertura" id="regioes" aria-labelledby="tituloRegioes">
+            <div class="container">
+                <div class="cobertura-cabecalho">
+                    <div>
+                        <span class="etiqueta etiqueta-azul">Onde o conforto chega</span>
+                        <h2 class="titulo-secao" id="tituloRegioes">Da capital ao interior,<br><em>o conforto vai com a gente.</em></h2>
+                    </div>
+                    <p>Atendemos São Paulo, Grande São Paulo e interior paulista. O mesmo cuidado, em cada endereço.</p>
                 </div>
+                <ul class="cobertura-rotas" aria-label="Regiões atendidas">
+                    <li>
+                        <a href="https://wa.me/5511978284358?text=Ol%C3%A1!%20Gostaria%20de%20um%20atendimento%20em%20S%C3%A3o%20Paulo%20capital." class="cobertura-regiao link-whatsapp" data-whatsapp-mensagem="Olá! Vim pelo site e gostaria de um atendimento em São Paulo capital. Posso informar meu bairro e o serviço que preciso?">
+                            <span class="cobertura-icone" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 28h26M6 28V13h8v15m0-21h10v21M19 7V3M9 17h2m-2 5h2m7-10h2m-2 5h2m-2 5h2"/></svg></span>
+                            <span class="cobertura-indice">01 / Capital</span>
+                            <h3>São Paulo</h3>
+                            <p>Mais conforto para sua casa ou seu negócio na cidade de São Paulo.</p>
+                            <span class="cobertura-acao">Consultar meu bairro <span aria-hidden="true">↗</span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/5511978284358?text=Ol%C3%A1!%20Gostaria%20de%20um%20atendimento%20na%20Grande%20S%C3%A3o%20Paulo." class="cobertura-regiao link-whatsapp" data-whatsapp-mensagem="Olá! Vim pelo site e gostaria de um atendimento na Grande São Paulo. Posso informar minha cidade e o serviço que preciso?">
+                            <span class="cobertura-icone" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 28h26M5 28V17h7v11m0-18h8v18m0-13h7v13M8 21h1m6-7h2m-2 5h2m-2 5h2m6-5h1m-1 5h1M5 8h5m-2-2 2 2-2 2m14-3h5m-2-2 2 2-2 2"/></svg></span>
+                            <span class="cobertura-indice">02 / Região metropolitana</span>
+                            <h3>Grande São Paulo</h3>
+                            <p>O cuidado da Mil Graus também chega às cidades ao redor da capital.</p>
+                            <span class="cobertura-acao">Consultar minha cidade <span aria-hidden="true">↗</span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/5511978284358?text=Ol%C3%A1!%20Gostaria%20de%20um%20atendimento%20no%20interior%20paulista." class="cobertura-regiao link-whatsapp" data-whatsapp-mensagem="Olá! Vim pelo site e gostaria de um atendimento no interior paulista. Posso informar minha cidade e o serviço que preciso?">
+                            <span class="cobertura-icone" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 28h26M4 17l8-7 8 7m-14-2v13m12-13v13m-9 0v-7h6v7m5-15 4-6 5 8m-5-8V4M24 15v13"/><circle cx="7" cy="5" r="2"/></svg></span>
+                            <span class="cobertura-indice">03 / Interior paulista</span>
+                            <h3>Interior de São Paulo</h3>
+                            <p>Da cidade ao seu espaço, levamos soluções de climatização para o interior.</p>
+                            <span class="cobertura-acao">Consultar minha cidade <span aria-hidden="true">↗</span></span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="cobertura-nota">Vamos até você. Informe sua cidade e seu bairro pelo WhatsApp para combinar a disponibilidade e o agendamento com a equipe.</p>
             </div>
         </section>
 
@@ -293,7 +341,7 @@
                         <li>Busca constante por aperfeiçoamento</li>
                         <li>Compromisso com o atendimento ao cliente</li>
                     </ul>
-                    <p class="sobre-regiao" id="sobreRegiao">Conte para a equipe onde será o serviço e consulte a disponibilidade de atendimento.</p>
+                    <p class="sobre-regiao" id="sobreRegiao">Atendemos São Paulo, Grande São Paulo e interior paulista. <a href="#regioes">Conheça nossas regiões de atendimento.</a></p>
                     <a href="#contato" class="link-detalhe">Converse com a Mil Graus <span aria-hidden="true">→</span></a>
                 </div>
             </div>
@@ -414,6 +462,10 @@
                     <p>É só clicar em "Pedir orçamento" e falar com a gente pelo WhatsApp.</p>
                 </details>
                 <details>
+                    <summary>Quais regiões vocês atendem?</summary>
+                    <p>Atendemos São Paulo capital, Grande São Paulo e interior do estado de São Paulo. Informe sua cidade e seu bairro pelo <a href="https://wa.me/5511978284358" class="link-whatsapp">WhatsApp</a> para consultar a disponibilidade e combinar o atendimento.</p>
+                </details>
+                <details>
                     <summary>Vocês fazem a instalação?</summary>
                     <p>Sim. A instalação é feita pela equipe técnica da Mil Graus Ar-Condicionado.</p>
                 </details>
@@ -440,14 +492,30 @@
         <section class="secao contato" id="contato">
             <div class="container contato-conteudo">
                 <h2>Vamos conversar?</h2>
-                <p>Deixe seu nome e WhatsApp. A conversa abre já com seus dados para a equipe Mil Graus Ar-Condicionado.</p>
+                <p class="contato-descricao">Conte onde será o atendimento e o que você precisa. O WhatsApp abre com seu pedido pronto para enviar à equipe.</p>
 
                 <form id="formContato" class="form-contato">
-                    <label for="contatoNome" class="visualmente-oculto">Seu nome</label>
-                    <input type="text" id="contatoNome" placeholder="Seu nome" required>
-                    <label for="contatoZap" class="visualmente-oculto">Seu WhatsApp</label>
-                    <input type="tel" id="contatoZap" placeholder="Seu WhatsApp com DDD" required>
-                    <button type="submit" class="botao botao-claro">Falar com a equipe</button>
+                    <div class="form-campo">
+                        <label for="contatoNome">Seu nome</label>
+                        <input type="text" id="contatoNome" name="nome" autocomplete="name" placeholder="Como podemos chamar você?" maxlength="100" pattern=".*\S.*" title="Digite seu nome." required>
+                    </div>
+                    <div class="form-campo">
+                        <label for="contatoLocal">Cidade e bairro</label>
+                        <input type="text" id="contatoLocal" name="local" autocomplete="address-level2" placeholder="Ex.: São Paulo, Vila Mariana" maxlength="160" pattern=".*\S.*" title="Informe sua cidade e seu bairro." required>
+                    </div>
+                    <div class="form-campo">
+                        <label for="contatoServico">Qual serviço você precisa?</label>
+                        <select id="contatoServico" name="servico" required>
+                            <option value="" disabled selected>Selecione um serviço</option>
+                            <option value="Venda de aparelho">Venda de aparelho</option>
+                            <option value="Instalação">Instalação</option>
+                            <option value="Limpeza e higienização">Limpeza e higienização</option>
+                            <option value="Manutenção e reparo">Manutenção e reparo</option>
+                            <option value="Revisão periódica">Revisão periódica</option>
+                            <option value="Preciso de orientação">Preciso de orientação</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="botao botao-claro">Pedir orçamento no WhatsApp ↗</button>
                 </form>
                 <a href="#" class="link-secundario link-whatsapp">Ou chame direto no WhatsApp</a>
             </div>
@@ -466,6 +534,7 @@
                 <!-- TODO (103.01): trocar pelos dados reais -->
                 <p>WhatsApp: <a href="https://wa.me/5511978284358" class="link-whatsapp">(11) 97828-4358</a></p>
                 <p>Atendimento: seg. a sex., 8h às 18h</p>
+                <p><a href="#regioes" class="rodape-regioes">São Paulo · Grande São Paulo · Interior paulista ↗</a></p>
             </div>
         </div>
         <p class="rodape-aviso">A calculadora é uma referência inicial. O projeto elétrico e a escolha final do aparelho são definidos na visita técnica, seguindo a norma NBR 5410.</p>
