@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Vendedor - Mil Graus Ar Condicionado</title>
+  <link rel="stylesheet" href="css/vendas.css">
+</head>
+<body>
+
+  <div class="header-painel">
+    <h1>Mil Graus - Gestão de Vendas</h1>
+    <p>Cadastro, Alteração e Exclusão de Pedidos</p>
+  </div>
+
+  <div class="layout">
+    <!-- Formulário para Inserir / Editar -->
+    <div class="form-container">
+      <h2 id="formTitle">Nova Venda</h2>
+      <form id="vendaForm">
+        <input type="hidden" id="vendaId">
+        
+        <div class="form-group">
+          <label for="cliente">Nome do Cliente</label>
+          <input type="text" id="cliente" required placeholder="Ex: João Silva">
+        </div>
+
+        <div class="form-group">
+          <label for="produto">Produto / Serviço</label>
+          <select id="produto" required>
+            <option value="">Selecione...</option>
+            <option value="Split 9000 BTUs Inverter">Split 9000 BTUs Inverter</option>
+            <option value="Split 12000 BTUs Inverter">Split 12000 BTUs Inverter</option>
+            <option value="Cassete 36000 BTUs">Cassete 36000 BTUs</option>
+            <option value="Instalação Padrão">Instalação Padrão</option>
+            <option value="Manutenção Preventiva">Manutenção Preventiva</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="qtd">Quantidade</label>
+          <input type="number" id="qtd" min="1" value="1" required>
+        </div>
+
+        <div class="form-group">
+          <label for="valor">Valor Total (R$)</label>
+          <input type="number" step="0.01" id="valor" placeholder="0.00" required>
+        </div>
+
+        <div class="btn-group">
+          <button type="submit" class="btn-salvar">Salvar Venda</button>
+          <button type="button" class="btn-limpar" id="btnCancelar">Cancelar</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Tabela de Vendas -->
+    <div class="table-container">
+      <h2>Vendas Registradas</h2>
+      <table id="tabelaVendas">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Produto</th>
+            <th>Qtd</th>
+            <th>Total (R$)</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="corpoTabela">
+          <!-- Linhas geradas dinamicamente -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/vendas.js"></script>
+</body>
+</html>

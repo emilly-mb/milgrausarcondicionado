@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f8fafc;
+  padding: 20px;
+  color: #1e293b;
+}
+
+.header-painel {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header-painel h1 {
+  color: #0284c7;
+  font-size: 1.8rem;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    align-items: start;
+  }
+}
+
+/* Formulário */
+.form-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #334155;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.btn-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-salvar {
+  background: #0284c7;
+  color: white;
+}
+
+.btn-salvar:hover {
+  background: #0369a1;
+}
+
+.btn-limpar {
+  background: #94a3b8;
+  color: white;
+}
+
+.btn-limpar:hover {
+  background: #64748b;
+}
+
+/* Tabela Responsiva */
+.table-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 550px;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+}
+
+th {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.btn-acao {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  width: auto;
+}
+
+.btn-editar {
+  background: #f59e0b;
+  color: white;
+}
+
+.btn-editar:hover {
+  background: #d97706;
+}
+
+.btn-excluir {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-excluir:hover {
+  background: #dc2626;
+}
